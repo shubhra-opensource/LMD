@@ -2,19 +2,29 @@
 % Please edit documentation in R/square_val.R
 \name{square_val}
 \alias{square_val}
-\title{Title}
+\title{Square Val}
 \usage{
-square_val(x)
+square_val(x = 2)
 }
 \arguments{
-\item{x:}{A numeric value to be squared}
+\item{x}{# An integer}
 }
 \value{
-y: # number
+y: An Integer
 }
 \description{
-Title
+Square Val
 }
 \examples{
 square_val(2)
 }
+\references{
+\url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
+}
+\seealso{
+\code{\link{utils}}
+}
+\author{
+Shubhra Prakash, \email{shubhraprakash247@gmail.com}
+}
+\keyword{hplot}

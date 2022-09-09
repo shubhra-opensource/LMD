@@ -1,13 +1,24 @@
-#' Title
+
+
+#' Square Val
 #'
-#' @param x: A numeric value to be squared
+#' @param x # An integer
 #'
-#' @return y: # number
+#' @return y: An Integer
+
+#'
+#' @examples square_val(2)
+#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @references \url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
+#' @seealso \code{\link{utils}}
+#' @keywords hplot
+#' @importFrom grDevices rgb2hsv
+#' @import ggplot2
+#'
 #' @export
-#'
-#' @examples
-#' square_val(2)
-square_val <- function(x) {
-  return(y=x**2)
+square_val <- function(x=2) {
+  y=x**2
+  p=ggplot2::ggplot()
+  return(y)
 
 }
