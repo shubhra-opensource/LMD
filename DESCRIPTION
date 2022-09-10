@@ -1,12 +1,16 @@
 Package: LMD
 Type: Package
-Title: What the Package Does (Title Case)
+Date: 2022-09-10
+Title: Methods for finding Product Functions and Residue from a Signal
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: c(
+    person("Shubhra", "Prakash", email = "shubhraprakash247@gmail.com", role = c("trl","ctb","cre")))
+Maintainer: Shubhra Prakash <shubhraprakash247@gmail.com>
+Description: Local Mean Decomposition (LMD), an iterative approach to demodulating amplitude and frequency modulated signals. The method decomposes signals into a set of functions, each of which is the product of an envelope signal and a frequency modulated signal from which a time-varying instantaneous frequency can be derived. The LMD method can be used to analyse a wide variety of natural signals such as electrocardiograms, functional magnetic resonance imaging data, and earthquake data. The package is based on <“PyLMD: Jonathan S. Smith. The local mean decomposition and its application to EEG perception data. Journal of the Royal Society Interface, 2005, 2(5): 443-454.” Accessed: Sep. 10, 2022. Available: https://github.com/shownlin/PyLMD> .
 License: MIT + file LICENSE
+Depends: R (>= 3.6.0)
+BugReports: https://github.com/shubhra-opensource/LMD/issues
+URL: https://github.com/shubhra-opensource/LMD
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.1
