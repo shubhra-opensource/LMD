@@ -1,8 +1,4 @@
 
-
-
-
-
 #' Local Mean and Envelope
 #'
 #' @description
@@ -20,7 +16,6 @@
 #' @export
 #'
 local_mean_and_envelope <- function(signal, extrema) {
-  browser()
   n = length(signal)
   k = length(extrema)
   stopifnot(1 < k)
@@ -32,7 +27,7 @@ local_mean_and_envelope <- function(signal, extrema) {
   prev_enve = abs(signal[extrema[1]] - signal[extrema[2]]) / 2
   e = 2
   for (x in 1:n) {
-    if ((x == extrema[e]) && ((e + 1) < k)) {
+    if ((x == extrema[e]) && ((e) < k)) {
       next_mean = (signal[extrema[e]] + signal[extrema[e + 1]]) / 2
       mean[length(mean) + 1] = ((prev_mean + next_mean) / 2)
       prev_mean = next_mean
@@ -48,43 +43,18 @@ local_mean_and_envelope <- function(signal, extrema) {
     }
   }# smooth square signal
   window = floor(max(diff(extrema)) / 3)
+  ma = moving_average_smooth(mean, window)
+  enve_sm = moving_average_smooth(enve, window)
+
 
   return(
     list(
       "mean" = mean,
-      "ma" = moving_average_smooth(mean, window),
+      "ma" = ma,
       "enve" = enve,
-      moving_average_smooth(enve, window)
+      "enve_sm" = enve_sm
     )
   )
 
 }
 
-
-
-
-
-signal=c(0.841471 ,  0.9092974,  0.14112  , -0.7568025, -0.9589243,
-           -0.2794155,  0.6569866,  0.9893582,  0.4121185, -0.5440211)
-
-extrema=c(0, 1, 4, 7, 9)
-
-local_mean_and_envelope(signal, extrema)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# }

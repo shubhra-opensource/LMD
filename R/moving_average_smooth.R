@@ -20,9 +20,9 @@
 #' plot(wma,type="l")
 #' @export
 #'
-#'
 moving_average_smooth <-
   function(signal, window, MAX_SMOOTH_ITERATION=12) {
+
     n = length(signal)
     # at least one nearby sample is needed for average
     if (window < 3) {
@@ -38,7 +38,7 @@ moving_average_smooth <-
 
     is_smooth <- function(signal) {
       for (x in 2:n) {
-        if (signal[x] == signal[x - 1]) {
+        if ((signal[x] == signal[x - 1])) {
           return(FALSE)
         }
       }
@@ -71,15 +71,15 @@ moving_average_smooth <-
                                                                      1):(length(smoothed) + half)]
       smoothed[(half + 1):(length(smoothed) - half)] = (smoothed[(half + 1):(length(smoothed) - half)]) /
         sum(weight)
-      w_num = half + 1
+      w_num = half
       for (i in 1:half) {
-        smoothed[i] = sum(unlist(head[i]) * weight[w_num:(length(weight))]) / sum(weight[w_num:(length(weight))])
-        smoothed[length(smoothed) - (i) + 1] = sum(unlist(tail[i]) * weight[1:(length(weight) - w_num +
-                                                                                 1)]) / sum(weight[1:(length(weight) - w_num + 1)])
+        smoothed[i] = sum(unlist(head[i]) * weight[(w_num+1):(length(weight))]) / sum(weight[(w_num+1):(length(weight))])
+        smoothed[length(smoothed) - (i) + 1] = sum(unlist(tail[i]) * weight[1:(length(weight) - w_num)]) / sum(weight[1:(length(weight) - w_num)]) #### locha
         w_num = w_num - 1
 
 
       }
+      smoothed=round(smoothed,7)
 
       if (is_smooth(smoothed)) {
         break
@@ -89,8 +89,7 @@ moving_average_smooth <-
 
     return(smoothed)
 
-
-
-
   }
+
+
 

@@ -27,6 +27,7 @@ x=0:100
 y = 2 / 3 * sin(x * 30) + 2 / 3 * sin(x * 17.5) + 4 / 5 *cos(x * 2)
 plot(y,type="l")
 wma=moving_average_smooth(y,5)
+plot(wma,type="l")
 }
 \references{
 \url{https://pypi.org/project/PyLMD/}
