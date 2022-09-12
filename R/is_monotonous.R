@@ -1,6 +1,6 @@
 
 
-#' is_monotonous
+#' Monotonicity Check
 #'
 #' @description
 #' Method for checking if signal is increasing or decreasing monotonously

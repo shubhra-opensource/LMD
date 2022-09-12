@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_monotonous.R
 \name{is_monotonous}
 \alias{is_monotonous}
-\title{is_monotonous}
+\title{Monotonicity Check}
 \usage{
 is_monotonous(signal)
 }
