@@ -9,7 +9,7 @@
 #' A monotonic signal is a function that keeps increasing or decreasing as its domain variable proceeds.#'
 #' @param signal Signal values (Numeric | vector)
 #' @return Boolean
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords monotonic monotonous
 #' @examples

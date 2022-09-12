@@ -48,6 +48,6 @@ lmd(y)
 \url{https://pypi.org/project/PyLMD/}
 }
 \author{
-Shubhra Prakash, \email{shubhraprakash247@gmail.com}
+Shubhra Prakash, \email{shubhraprakash279@gmail.com}
 }
 \keyword{lmd}

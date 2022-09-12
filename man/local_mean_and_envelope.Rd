@@ -12,7 +12,7 @@ local_mean_and_envelope(signal, extrema)
 \item{extrema}{indexes for extreme values#'}
 }
 \value{
-mean, evelope and smoothed mean and envelope values
+mean, envelope and smoothed mean and envelope values
 }
 \description{
 Method for finding Local Mean and Envelope
@@ -26,7 +26,7 @@ local_mean_and_envelope(signal, extrema)
 \url{https://pypi.org/project/PyLMD/}
 }
 \author{
-Shubhra Prakash, \email{shubhraprakash247@gmail.com}
+Shubhra Prakash, \email{shubhraprakash279@gmail.com}
 }
 \keyword{Envelope}
 \keyword{Local}

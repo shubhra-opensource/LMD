@@ -9,7 +9,7 @@
 #' @param window filter weights for smoothing (Numeric | vector)
 #' @param MAX_SMOOTH_ITERATION Maximum number of iterations of moving average algorithm (Integer)
 #' @return smooth signal
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords Weighted Moving Average wma
 #' @examples

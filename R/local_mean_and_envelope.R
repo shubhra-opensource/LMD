@@ -5,8 +5,8 @@
 #' Method for finding Local Mean and Envelope
 #' @param signal Signal values (Numeric | vector)
 #' @param extrema indexes for extreme values#'
-#' @return mean, evelope and smoothed mean and envelope values
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @return mean, envelope and smoothed mean and envelope values
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords Local Mean and Envelope
 #' @examples

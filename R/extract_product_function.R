@@ -9,7 +9,7 @@
 #' @param ENVELOPE_EPSILON Terminate processing when obtaining pure FM signal (Double)
 #' @param CONVERGENCE_EPSILON Terminate processing when modulation signal converges (Double)
 #' @return Product Function
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords lmd
 #' @examples

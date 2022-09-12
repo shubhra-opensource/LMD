@@ -25,6 +25,6 @@ signal=c( 0.841471 ,0.9092974,0.14112,-0.7568025,-0.9589243)
 find_extrema(signal)
 }
 \author{
-Shubhra Prakash, \email{shubhraprakash247@gmail.com}
+Shubhra Prakash, \email{shubhraprakash279@gmail.com}
 }
 \keyword{extrema}

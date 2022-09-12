@@ -9,7 +9,7 @@
 #' @param INCLUDE_ENDPOINTS whether to include end points or not (Boolean)
 #'
 #' @return Index of all extrema values (including starting and ending points)
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @keywords extrema
 #' @examples
 #' signal=c( 0.841471 ,0.9092974,0.14112,-0.7568025,-0.9589243)

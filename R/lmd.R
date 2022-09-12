@@ -17,7 +17,7 @@
 #' @param MAX_NUM_PF The maximum number of PFs generated(Integer)
 #'
 #' @return list(pf,residue) | PFs:The decompose functions arranged from high frequency to low frequency | residue:residual component
-#' @author Shubhra Prakash, \email{shubhraprakash247@@gmail.com}
+#' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords lmd
 #' @examples
@@ -36,32 +36,25 @@ lmd <- function(signal,
                 CONVERGENCE_EPSILON=0.01,
                 MAX_NUM_PF=8) {
 
+  # browser()
+
   pf = list()
   count = 1
   # until the residual function is close to a monotone function
   residue = signal
-  # while ((length(pf) < MAX_NUM_PF) &&
-  #        (!is_monotonous(residue)) &&
-  #        (length(find_extrema(residue)) >= 5)) {
-  #   component = extract_product_function(residue)
-  #   residue = residue - component
-  #   pf[[count]] = component
-  #   count = count + 1
-  #
-  # }
+  while ((length(pf) < MAX_NUM_PF) &&
+         (!is_monotonous(residue)) &&
+         (length(find_extrema(residue,INCLUDE_ENDPOINTS=INCLUDE_ENDPOINTS)) >= 3)) {
+    component = extract_product_function(residue,MAX_ENVELOPE_ITERATION=MAX_ENVELOPE_ITERATION,ENVELOPE_EPSILON=ENVELOPE_EPSILON,CONVERGENCE_EPSILON=CONVERGENCE_EPSILON)
+    residue = residue - component
+    pf[[count]] = component
+    count = count + 1
+
+  }
 
   return(list("pf"=pf,"residue"=residue))
 
 }
-
-
-
-# lmd: no visible global function definition for 'find_extrema'
-# lmd: no visible global function definition for'extract_product_function'
-
-
-
-
 
 
 
