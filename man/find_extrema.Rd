@@ -4,15 +4,15 @@
 \alias{find_extrema}
 \title{Find Extreme Points}
 \usage{
-find_extrema(signal, INCLUDE_ENDPOINTS = TRUE)
+find_extrema(signal, include_endpoints = TRUE)
 }
 \arguments{
 \item{signal}{Signal values (Numeric | vector)}
 
-\item{INCLUDE_ENDPOINTS}{whether to include end points or not (Boolean)}
+\item{include_endpoints}{whether to include end points or not (Boolean)}
 }
 \value{
-Index of all extrema values (including starting and ending points)
+Indexes of all extrema values (including starting and ending points)
 }
 \description{
 Method for finding Extreme Points

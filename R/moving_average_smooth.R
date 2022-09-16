@@ -7,21 +7,21 @@
 #' Weighted Moving Average Smoothing is used to smoothen the mean and envelope signal
 #' @param signal Signal values (Numeric | vector)
 #' @param window filter weights for smoothing (Numeric | vector)
-#' @param MAX_SMOOTH_ITERATION Maximum number of iterations of moving average algorithm (Integer)
+#' @param max_smooth_iteration Maximum number of iterations of moving average algorithm (Integer)
 #' @return smooth signal
 #' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
 #' @keywords Weighted Moving Average wma
 #' @examples
 #' x=0:100
-#' y = 2 / 3 * sin(x * 30) + 2 / 3 * sin(x * 17.5) + 4 / 5 *cos(x * 2)
+#' y = (2 / 3 )* sin(x * 30) + (2 / 3) * sin(x * 17.5) + (4 / 5) *cos(x * 2)
 #' plot(y,type="l")
 #' wma=moving_average_smooth(y,5)
 #' plot(wma,type="l")
 #' @export
 #'
 moving_average_smooth <-
-  function(signal, window, MAX_SMOOTH_ITERATION=12) {
+  function(signal, window, max_smooth_iteration=12) {
 
     n = length(signal)
     # at least one nearby sample is needed for average
@@ -49,7 +49,7 @@ moving_average_smooth <-
     }
     smoothed = signal
 
-    for (ii in 1:MAX_SMOOTH_ITERATION) {
+    for (ii in 1:max_smooth_iteration) {
       head = list()
       tail = list()
       w_num = half

@@ -4,14 +4,14 @@
 \alias{moving_average_smooth}
 \title{Weighted Moving Average}
 \usage{
-moving_average_smooth(signal, window, MAX_SMOOTH_ITERATION = 12)
+moving_average_smooth(signal, window, max_smooth_iteration = 12)
 }
 \arguments{
 \item{signal}{Signal values (Numeric | vector)}
 
 \item{window}{filter weights for smoothing (Numeric | vector)}
 
-\item{MAX_SMOOTH_ITERATION}{Maximum number of iterations of moving average algorithm (Integer)}
+\item{max_smooth_iteration}{Maximum number of iterations of moving average algorithm (Integer)}
 }
 \value{
 smooth signal
@@ -24,7 +24,7 @@ Weighted Moving Average Smoothing is used to smoothen the mean and envelope sign
 }
 \examples{
 x=0:100
-y = 2 / 3 * sin(x * 30) + 2 / 3 * sin(x * 17.5) + 4 / 5 *cos(x * 2)
+y = (2 / 3 )* sin(x * 30) + (2 / 3) * sin(x * 17.5) + (4 / 5) *cos(x * 2)
 plot(y,type="l")
 wma=moving_average_smooth(y,5)
 plot(wma,type="l")

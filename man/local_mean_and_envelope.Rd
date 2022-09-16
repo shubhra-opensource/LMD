@@ -9,7 +9,7 @@ local_mean_and_envelope(signal, extrema)
 \arguments{
 \item{signal}{Signal values (Numeric | vector)}
 
-\item{extrema}{indexes for extreme values#'}
+\item{extrema}{indexes for extreme values}
 }
 \value{
 mean, envelope and smoothed mean and envelope values
