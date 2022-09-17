@@ -20,7 +20,7 @@ smooth signal
 Weighted Moving Average Smoothing
 }
 \details{
-Weighted Moving Average Smoothing is used to smoothen the mean and envelope signal
+Weighted Moving Average Smoothing is used to smooth en the mean and envelope signal
 }
 \examples{
 x=0:100

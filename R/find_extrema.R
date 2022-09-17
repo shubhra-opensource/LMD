@@ -19,7 +19,6 @@
 #'
 find_extrema <- function(signal, include_endpoints = TRUE) {
   n = length(signal)
-  # extreme_points=EMD::extrema()
   extremas = EMD::extrema(signal)
   maxima = extremas[["maxindex"]]
   minima = extremas[["minindex"]]

@@ -6,7 +6,7 @@
 #' @param lmd_obj LMD object created from LMD function
 #' @param max_pf Number of PFs to Plot
 #' @param show_residue Whether to plot residue or not
-#' @param pricolor_plot Colour of plots
+#' @param pricolor_plot color of plots
 #' @param line_size_plot Size of line in ggplot
 #'
 #' @return ggplot plot for Product Functions (PFs) and Residue
@@ -30,7 +30,7 @@ uniplot <- function(series, yname,priColor=pricolor_plot,line_size=line_size_plo
 
   x=1:(length(series))
     ggplot2::ggplot() +
-    # ggplot2::geom_point(aes(x = x ,y=series),size=point_size,fill=priColor, colour = priColor,shape=21)+
+    # ggplot2::geom_point(aes(x = x ,y=series),size=point_size,fill=priColor, color = priColor,shape=21)+
     ggplot2::geom_line(aes(x = x,y=series),colour = priColor,size=line_size) +
     ggplot2::ylab(yname) +ggplot2::labs(yname) +ggplot2::theme_bw() +
     ggplot2::theme(panel.border=ggplot2::element_rect(size=0.1),legend.position = c(0.8, 0.8), panel.grid.major.x=ggplot2::element_blank())

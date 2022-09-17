@@ -19,7 +19,7 @@ plot_lmd(
 
 \item{show_residue}{Whether to plot residue or not}
 
-\item{pricolor_plot}{Colour of plots}
+\item{pricolor_plot}{color of plots}
 
 \item{line_size_plot}{Size of line in ggplot}
 }

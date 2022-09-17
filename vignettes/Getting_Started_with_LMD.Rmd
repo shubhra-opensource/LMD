@@ -31,26 +31,30 @@ knitr::opts_chunk$set(
   dpi = 150
 )
 
+library("ggplot2")
+library("rmarkdown")
+library("knitr")
+library("ggformula")
+library("patchwork")
+library( "LMD")
+
+# # installing all required packages
+# list.of.packages <- c("ggplot2",
+#                       "rmarkdown",
+#                       "knitr",
+#                       "ggformula",
+#                       "patchwork",
+#                       "LMD")
+# 
+# new.packages <-
+#   list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+# if (length(new.packages))
+#   install.packages(new.packages, dependencies = TRUE)
+# 
+# # Loading the required libraries
+# lapply(list.of.packages, library, character.only = T)
 
 
-# installing all required packages
-list.of.packages <- c("tidyverse",
-                      "rmarkdown",
-                      "knitr",
-                      "ggformula",
-                      "patchwork",
-                      "LMD")
-
-new.packages <-
-  list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
-if (length(new.packages))
-  install.packages(new.packages, dependencies = TRUE)
-
-# Loading the required libraries
-lapply(list.of.packages, library, character.only = T)
-
-# Sourcing the modified files for muHVT
-## Do this if muHVT is unavailable on CRAN
 
 options(expressions = 10000)
 
@@ -67,14 +71,18 @@ The R package LMD is introduced in this work, which is based on local mean decom
 # Introduction
 
 ::: {style="text-align: justify"}
-Rotating machines are widely used in many sectors and are susceptible to a wide range of failures, particularly when working in tough and time-varying situations. Early discovery of these faults is critical; otherwise, they may result in significant economic loss, if not a catastrophe. As a result, the development of effective defect diagnostic techniques is critical for safety and improved maintenance decision making in rotating equipment applications. There are many feature extraction techniques available today for the detection of rotating machinery faults, such as frequency/spectrum analysis, time/statistical analysis, time-frequency analysis, and so on. However, the approaches described above are only applicable to mono-component modulation signals, and also do not perform well for non-stationary signals.<br>   Signals acquired from machines not only have the frequency of the machine component of interest, but also interference frequencies from other neighbouring components and environmental disturbances. The phenomena of amplitude modulation, frequency modulation, and phase modulation are also frequent in these signals. Furthermore, rotating machines frequently operate under time-varying speed and load circumstances, causing the signals obtained from them to be non-linear. If a failure starts developing in these machines, the fault signature is difficult to identify owing to the interferences indicated above.<br>   Adaptive mode decomposition approaches work well with non-stationary time series data. These procedures do not need any prior understanding of the signals and are good in capturing the local features of a signal, such as malfunction indication. LMD is also an adaptive technique that can decompose a complex multi-component signal into a series of product functions (PFs) on its own,
+Rotating machines are widely used in many sectors and are susceptible to a wide range of failures, particularly when working in tough and time-varying situations. Early discovery of these faults is critical; otherwise, they may result in significant economic loss, if not a catastrophe. As a result, the development of effective defect diagnostic techniques is critical for safety and improved maintenance decision making in rotating equipment applications. There are many feature extraction techniques available today for the detection of rotating machinery faults, such as frequency/spectrum analysis, time/statistical analysis, time-frequency analysis, and so on. However, the approaches described above are only applicable to mono-component modulation signals, and also do not perform well for non-stationary signals.<br>   Signals acquired from machines not only have the frequency of the machine component of interest, but also interference frequencies from other neighboring components and environmental disturbances. The phenomena of amplitude modulation, frequency modulation, and phase modulation are also frequent in these signals. Furthermore, rotating machines frequently operate under time-varying speed and load circumstances, causing the signals obtained from them to be non-linear. If a failure starts developing in these machines, the fault signature is difficult to identify owing to the interferences indicated above.<br>   Adaptive mode decomposition approaches work well with non-stationary time series data. These procedures do not need any prior understanding of the signals and are good in capturing the local features of a signal, such as malfunction indication. LMD is also an adaptive technique that can decompose a complex multi-component signal into a series of product functions (PFs) on its own.
 :::
 
 <br>
 
 # LMD
 
-A multi-component signal can be decomposed by LMD into a succession of PFs and a residue. Each PF is a mono component that is the result of an envelope signal and a frequency modulated signal. A two-tier method is utilized to perform the decomposition based on the PF specification.First, the inner cycle is used to conduct a thorough computation of the PF. Second, in the outer cycle, the signal is decomposed depending on the iterations. In the following sections the methods have been broken down into steps that LMD technique requires to complete the analysis on a given signal x(t). Consider the following synthetic signal $x (t)$ of the form :
+::: {style="text-align: justify"}
+A multi-component signal can be broken down into its constituent PFs and a residue. Each PF is a mono component that is the result of an envelope signal and a frequency modulated signal. In LMD a two-tier method is utilized to perform the demodulation .First, the inner cycle is used to conduct a thorough computation of the PF. Second, in the outer cycle, the signal is decomposed depending on the iterations. In the following sections the methods have been broken down into steps that LMD technique requires to complete the analysis on a given signal x(t). Consider the following synthetic signal $x (t)$ of the form :
+:::
+
+<br>
 
 $$x ( t ) = 0.25t + sin ( πt ) + sin ( 2πt ) + sin ( 6πt )$$
 
@@ -179,7 +187,7 @@ p3 <- ggplot() +
 plot(p3)
 ```
 
-The local mean function $m_{11}(t)$ can be formed by using moving averaging to smooth the local means $m_i$.
+The local mean function $m_{11}(t)$ is derived by taking a moving weighted average of the means $m_i$.
 
 ```{r,echo=TRUE,message=FALSE,warning=FALSE}
 
@@ -210,7 +218,7 @@ p4 <- ggplot() +
 plot(p4)
 ```
 
-A corresponding envelope estimate $a_i$ is given by:
+Similarly the envelope value$a_i$ is given by:
 
 $$ \begin{aligned} &a_i = {\frac{|n_i-n_{i+1}|}{2}} \\ 
  \end{aligned} $$
@@ -232,7 +240,7 @@ p5 <- ggplot() +
 plot(p5)
 ```
 
-Similarly, the envelope estimate $a_i$ is smoothed and corresponding envelope function $a_{11}$(t) is formed.
+The envelope values $a_i$ are smoothed using weighted moving average and the envelope function $a_{11}$(t) is formed.
 
 ```{r,echo=TRUE,message=FALSE,warning=FALSE}
 
@@ -266,21 +274,21 @@ The function returns local mean, moving averaged local mean, envelope and moving
 
 ### Step 3
 
-The local mean function $m_{11}$(t) is subtracted from the original signal $x(t)$ and the estimated zero-mean signal $h_{11}$(t) is given by
+In the step 3 we calculate the zero-mean signal $h_{11}$(t) by taking a difference of the original signal $x(t)$ and the local mean function $m_{11}$(t) :
 
 $$ \begin{aligned} &h_{11}(t) = {x(t)-m_{11}(t)} \\ 
  \end{aligned} $$
 
 ### Step 4
 
-Then, a frequency modulated signal $s_{11}$(t) can be obtained as:
+Then, a frequency modulated signal $s_{11}$(t) is calculated  as:
 
 $$ \begin{aligned} &s_{11}(t) = {h_{11}(t)/a_{11}(t)} \\ 
  \end{aligned}  $$
 
 ### Step 5
 
-Repeat Steps 1 -- 3 to get the envelope estimate $a_{12}$(t) of $s_{11}$(t) . If the envelope function $a_{12}$(t) =1, stop the procedure and take $s_{12}$(t) as the first purely frequency modulated (FM) signal. Otherwise, let $s_{11}$(t) be the original signal and repeat Steps 1 -- 4 n times until the envelope function $a_{1(n+1)}$(t) of $s_{1(n)}$(t) satisfies $a_{1(n+1)}$(t)=1
+Repeat the above steps 1 to 3 to get the envelope value $a_{12}$(t) of $s_{11}$(t) . This is the checkpoint for the inner loop, if this  envelope function $a_{12}$(t) is equal to 1, the inner iteration is stopped and $s_{12}$(t) is considered as the first purely frequency modulated (FM) signal. Else, the $s_{11}$(t) is considered as the original signal and Steps 1 to 4 are repeated n times until the condition $a_{1(n+1)}$(t)=1 is satisfied for signal $s_{1(n)}$(t).
 
 ### Step 6
 
@@ -296,9 +304,9 @@ Compute the first $PF_1$ using $a_{1}(t)$ and $s_{1n}(t)$:
 $$\begin{aligned} & PF_1 = a_{1}(t)s_{1n}(t)  \\ 
  \end{aligned} $$
 
-Compute the residue signal $u_1(t)$ = $x(t)$-$PF_1(t)$ . Take $u_1(t)$ as a new signal and repeat the above procedure n times until $u_n(t)$ does not contain oscillation.
+Now the residual signal is given by $u_1(t)$ = $x(t)$-$PF_1(t)$ . The residual $u_1(t)$ is considered as the original signal and the above steps are repeated n times until $u_n(t)$ does not contain oscillation.
 
-This is the called outer loop of LMD. Finally, the signal x(n) can be reconstructed according to the equation:
+This is the called outer loop of LMD. Finally, the signal x(n) is represented as a sum of PFs and residual signal:
 
 $$\begin{aligned} & x(n) = \sum^q_{i=1}PF_i(n)+u_q(n)  \\ 
  \end{aligned} $$
@@ -329,7 +337,7 @@ A flowchart of the LMD method is presented in figure below for better understand
 
 # Analysis of a simulated signal
 
-In this section we will take a simulated multi-component AM--FM signal x(t) and apply the LMD method on it. The time duration of the signal is 600s with sampling frequency 1 Hz.
+In this section we will take a simulated multi-component AM--FM signal x(t) and apply the LMD method on it. The time duration of the signal is 600s with sampling frequency of 1 Hz.
 
 $$ \begin{align*} 
 x(t) &= x_1(t) + x_2(t) \\
@@ -404,7 +412,7 @@ The decomposition results are presented in plot below using `plot_lmd` function.
 -   `lmd_obj`: LMD object created from LMD function
 -   `max_pf`: Number of PFs to Plot
 -   `show_residue`: Whether to plot residue signal or not
--   `pricolor_plot`: Line colour for plots
+-   `pricolor_plot`: Line color for plots
 -   `line_size_plot`: Size of line in ggplot
 
 The function returns a combined plot for PF and residual values.
@@ -414,12 +422,11 @@ plot_lmd(lmd_object)+
     plot_annotation(title = "Fig 9. LMD Decompsition of Simulated Signal")
 ```
 
-In the plot above two PFs and a residue signal have been generated and represented using aplot. PF1(t) is the component corresponding to x1(t) and PF2 is the component corresponding to x2(t).PF1(t) and PF2(t) match well with x1(t) and x2(t), respectively. However, the residue signal contains some unexpected peaks, which demonstrates that the demodulation is not perfect.
-
+In the plot above the product functions and the residual signal obtained by decomposition of original signal is shown. The first product function PF1(t) corresponds to constituent x1(t) and second product function PF2 is the signal close to original constituent x2(t). PF1(t) and PF2(t) are very close and similar to x1(t) and x2(t), respectively. However, the residue signal contains some abnormal peaks, and the corresponding disturbances can be seen in PFs as well, which shows that the demodulation is close but not perfect. In the next section we address these imperfections.
 
 # Drawbacks of LMD
 
-LMD shows good ability in demodulating amplitude and frequency modulated signals. However, it is not perfect. It has shortcomings, e.g., end effects and mode mixing. For better understanding, the decomposition results in Fig. 9 are utilized to illustrate the end effect and mode mixing problems. In Fig. 10 we can observe distortions in the two ends of PF1(t). This phenomenon is called the end effect of LMD. In addition, we can see another distortion at around 500 s. This is called mode mixing of LMD. ***To mitigate these issues, several variations of LMD (like RLMD,IELMD,OLMD etc) have been proposed by researchers, however, these methods have not been included in this package.***
+LMD shows great capability in demodulating amplitude and frequency modulated signals. Be that as it may, it is noticeably flawed. It has inadequacies, namely end effects and mode mixing. For better understanding, these imperfections have been highlighted in the plot that we received in above step(Fig 9). In Fig. 10, if we look closely at the ends of residual signal, we can notice the first and the last value deviating a lot from the rest of the signal, this effect is visible in PFs also. This peculiarity is known as the end effect of LMD. Furthermore, we can see some more deviations at around 500 s. This is called mode mixing of LMD.  ***To mitigate these issues, several variations of LMD (like RLMD,IELMD,OLMD etc) have been proposed by researchers, however, these methods have not been included in this package.***
 
 ![Figure 10: Drawbacks of LMD](www/drawback_lmd.png){width="700"}
 
@@ -427,14 +434,12 @@ LMD shows good ability in demodulating amplitude and frequency modulated signals
 
 # Applications
 
-* Fault diagnosis for rotating machinery
-* Decomposition of ECG Signal
+-   Fault diagnosis for rotating machinery
+-   Decomposition of EEG Signal
 
 # References
 
-* D. Kim and H.-S. Oh, “EMD: A package for empirical mode decomposition and Hilbert spectrum,” The R Journal, 01-Jun-2009. [Online]. Available: https://journal.r-project.org/articles/RJ-2009-002/. [Accessed: 17-Sep-2022]. 
-J. Cheng, Y. Yang, and Y. Yang, “A rotating machinery fault diagnosis method based on local mean decomposition,” Digital Signal Processing, 19-Oct-2011. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S1051200411001448. [Accessed: 17-Sep-2022]. 
-* “Review of local mean decomposition and its application in fault diagnosis of rotating machinery,” IEEE Xplore. [Online]. Available: https://ieeexplore.ieee.org/document/8820748. [Accessed: 17-Sep-2022]. 
-* Y. Li, M. Xu, Z. Haiyang, Y. Wei, and W. Huang, “A new rotating machinery fault diagnosis method based on improved local mean decomposition,” Digital Signal Processing, 08-Jul-2015. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S1051200415002213. [Accessed: 17-Sep-2022]. 
-* Z. Liu, Y. Jin, M. J. Zuo, and Z. Feng, “Time-frequency representation based on robust local mean decomposition for multicomponent AM-FM signal analysis,” Mechanical Systems and Signal Processing, 10-Apr-2017. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S0888327017301619. [Accessed: 17-Sep-2022]. 
-
+-   D. Kim and H.-S. Oh, "EMD: A package for empirical mode decomposition and Hilbert spectrum," The R Journal, 01-Jun-2009. [Online]. Available: <https://journal.r-project.org/articles/RJ-2009-002/>. [Accessed: 17-Sep-2022]. J. Cheng, Y. Yang, and Y. Yang, "A rotating machinery fault diagnosis method based on local mean decomposition," Digital Signal Processing, 19-Oct-2011. [Online]. Available: <https://www.sciencedirect.com/science/article/pii/S1051200411001448>. [Accessed: 17-Sep-2022].
+-   "Review of local mean decomposition and its application in fault diagnosis of rotating machinery," IEEE Xplore. [Online]. Available: <https://ieeexplore.ieee.org/document/8820748>. [Accessed: 17-Sep-2022].
+-   Y. Li, M. Xu, Z. Haiyang, Y. Wei, and W. Huang, "A new rotating machinery fault diagnosis method based on improved local mean decomposition," Digital Signal Processing, 08-Jul-2015. [Online]. Available: <https://www.sciencedirect.com/science/article/pii/S1051200415002213>. [Accessed: 17-Sep-2022].
+-   Z. Liu, Y. Jin, M. J. Zuo, and Z. Feng, "Time-frequency representation based on robust local mean decomposition for multicomponent AM-FM signal analysis," Mechanical Systems and Signal Processing, 10-Apr-2017. [Online]. Available: <https://www.sciencedirect.com/science/article/pii/S0888327017301619>. [Accessed: 17-Sep-2022].

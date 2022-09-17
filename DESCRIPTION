@@ -1,7 +1,7 @@
 Package: LMD
 Type: Package
 Date: 2022-09-10
-Title: An iterative and self adaptive approach for demodulating, processing and analyzing multi component amplitude modulated and frequency modulated signals
+Title: An Iterative and Self Adaptive Approach for Demodulating, Processing and Analyzing Multi Component Amplitude Modulated and Frequency Modulated Signal
 Version: 1.0.0
 Authors@R: c(
     person("Shubhra", "Prakash", email = "shubhraprakash279@gmail.com", role = c("trl","aut","cre")))
@@ -12,11 +12,11 @@ Depends: R (>= 3.6.0)
 BugReports: https://github.com/shubhra-opensource/LMD/issues
 URL: https://github.com/shubhra-opensource/LMD
 Encoding: UTF-8
-LazyData: true
 RoxygenNote: 7.2.1
 Suggests: 
     knitr,
     rmarkdown,
+    ggformula,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr

@@ -4,7 +4,7 @@
 #' Weighted Moving Average Smoothing
 #'
 #' @details
-#' Weighted Moving Average Smoothing is used to smoothen the mean and envelope signal
+#' Weighted Moving Average Smoothing is used to smooth en the mean and envelope signal
 #' @param signal Signal values (Numeric | vector)
 #' @param window filter weights for smoothing (Numeric | vector)
 #' @param max_smooth_iteration Maximum number of iterations of moving average algorithm (Integer)

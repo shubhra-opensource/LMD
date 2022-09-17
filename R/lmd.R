@@ -19,7 +19,7 @@
 #' @return list(pf,residue) | PFs:The decompose functions arranged from high frequency to low frequency | residue:residual component
 #' @author Shubhra Prakash, \email{shubhraprakash279@@gmail.com}
 #' @references \url{https://pypi.org/project/PyLMD/}
-#' @keywords lmd, Local mean decomposition, Product functions, Demodulation, Fault diagnosis, self-adaptive mechanism
+#' @keywords lmd Local mean decomposition Product functions Demodulation Fault diagnosis self-adaptive mechanism
 
 #' @examples
 #' x=1:100

@@ -50,14 +50,14 @@ lmd(y)
 \author{
 Shubhra Prakash, \email{shubhraprakash279@gmail.com}
 }
-\keyword{Demodulation,}
+\keyword{Demodulation}
 \keyword{Fault}
 \keyword{Local}
 \keyword{Product}
-\keyword{decomposition,}
-\keyword{diagnosis,}
-\keyword{functions,}
-\keyword{lmd,}
+\keyword{decomposition}
+\keyword{diagnosis}
+\keyword{functions}
+\keyword{lmd}
 \keyword{mean}
 \keyword{mechanism}
 \keyword{self-adaptive}
