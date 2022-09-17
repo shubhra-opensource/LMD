@@ -26,8 +26,8 @@
 #' y = (2 / 3 )* sin(x * 30) + (2 / 3) * sin(x * 17.5) + (4 / 5) *cos(x * 2)
 #' plot(y,type="l")
 #' lmd(y)
-#' @export
-#'
+#' @export lmd
+
 
 lmd <- function(signal,
                 include_endpoints=TRUE,

@@ -13,8 +13,8 @@
 #' signal = sin(1:10)
 #' extrema = c(1 , 2,  5,  8, 10)
 #' local_mean_and_envelope(signal, extrema)
-#' @export
-#'
+#' @export local_mean_and_envelope
+
 local_mean_and_envelope <- function(signal, extrema) {
   n = length(signal)
   k = length(extrema)

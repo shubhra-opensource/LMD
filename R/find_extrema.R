@@ -15,8 +15,8 @@
 #' @examples
 #' signal=c( 0.841471 ,0.9092974,0.14112,-0.7568025,-0.9589243)
 #' find_extrema(signal)
-#' @export
-#'
+#' @export find_extrema
+
 find_extrema <- function(signal, include_endpoints = TRUE) {
   n = length(signal)
   extremas = EMD::extrema(signal)

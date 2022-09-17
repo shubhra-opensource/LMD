@@ -18,8 +18,8 @@
 #' plot(y,type="l")
 #' wma=moving_average_smooth(y,5)
 #' plot(wma,type="l")
-#' @export
-#'
+#' @export moving_average_smooth
+
 moving_average_smooth <-
   function(signal, window, max_smooth_iteration=12) {
 

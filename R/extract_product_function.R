@@ -17,8 +17,8 @@
 #' y = (2 / 3 )* sin(x * 30) + (2 / 3) * sin(x * 17.5) + (4 / 5) *cos(x * 2)
 #' plot(y,type="l")
 #' pf=extract_product_function(y)
-#' @export
-#'
+#' @export extract_product_function
+
 
 extract_product_function <- function(signal,max_envelope_iteration=200,envelope_epsilon=0.01,convergence_epsilon=0.01) {
   s = signal

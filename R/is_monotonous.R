@@ -15,9 +15,8 @@
 #' @examples
 #' x=1:100
 #' is_monotonous(x)
-#' @export
-#'
-#'
+#' @export is_monotonous
+
 is_monotonous <- function(signal) {
   # Find if signal is decreasing monotonously
   is_monotonous_decrease <- function(signal) {

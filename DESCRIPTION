@@ -6,8 +6,8 @@ Version: 1.0.0
 Authors@R: c(
     person("Shubhra", "Prakash", email = "shubhraprakash279@gmail.com", role = c("trl","aut","cre")))
 Maintainer: Shubhra Prakash <shubhraprakash279@gmail.com>
-Description: Local Mean Decomposition (LMD), an iterative approach to demodulating amplitude and frequency modulated signals. The package is based on python package PyLMD <“PyLMD: Jonathan S. Smith. The local mean decomposition and its application to EEG perception data. Journal of the Royal Society Interface, 2005, 2(5): 443-454.” Accessed: Sep. 10, 2022. Available: (<https://github.com/shownlin/PyLMD>) .
-License: MIT + file LICENSE
+Description: Local Mean Decomposition, an iterative approach to demodulating amplitude and frequency modulated signals. The package is based on python package < “Jonathan S. Smith. The local mean decomposition and its application to EEG perception data. Journal of the Royal Society Interface, 2005, 2(5): 443-454.” Accessed: Sep. 10, 2022. Available: (<https://github.com/shownlin/PyLMD> ) .
+License: Apache License (>= 2)
 Depends: R (>= 3.6.0)
 BugReports: https://github.com/shubhra-opensource/LMD/issues
 URL: https://github.com/shubhra-opensource/LMD

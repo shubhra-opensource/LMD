@@ -18,8 +18,8 @@
 #' x=1:100
 #' y = (2 / 3 )* sin(x * 30) + (2 / 3) * sin(x * 17.5) + (4 / 5) *cos(x * 2)
 #' plot_lmd(lmd(y))
-#' @export
-#'
+#' @export plot_lmd
+
 plot_lmd <- function(lmd_obj,max_pf=length(lmd_obj[["pf"]]),show_residue=TRUE,pricolor_plot="midnightblue",line_size_plot=1) {
   # requireNamespace(ggplot2)
   # requireNamespace(patchwork)
