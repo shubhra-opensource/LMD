@@ -1,16 +1,17 @@
 Package: LMD
 Type: Package
 Date: 2022-09-10
-Title: An Iterative and Self Adaptive Approach for Demodulating, Processing and Analyzing Multi Component Amplitude Modulated and Frequency Modulated Signal
+Title: A Self-Adaptive Approach for Demodulating Multi-Component Signal
 Version: 1.0.0
 Authors@R: c(
     person("Shubhra", "Prakash", email = "shubhraprakash279@gmail.com", role = c("trl","aut","cre")))
 Maintainer: Shubhra Prakash <shubhraprakash279@gmail.com>
-Description: Local Mean Decomposition, an iterative approach to demodulating amplitude and frequency modulated signals. The package is based on python package < “Jonathan S. Smith. The local mean decomposition and its application to EEG perception data. Journal of the Royal Society Interface, 2005, 2(5): 443-454.” Accessed: Sep. 10, 2022. Available: (<https://github.com/shownlin/PyLMD> ) .
+Description: Local Mean Decomposition is an iterative and self-adaptive approach for demodulating, processing, and analyzing multi-component amplitude modulated and frequency modulated signals. This R package is based on the approach suggested by Smith (2005) <doi:10.1098/rsif.2005.0058> and the 'Python' library 'PyLMD'.
 License: Apache License (>= 2)
 Depends: R (>= 3.6.0)
 BugReports: https://github.com/shubhra-opensource/LMD/issues
-URL: https://github.com/shubhra-opensource/LMD
+URL: https://github.com/shubhra-opensource/LMD,
+    https://shubhra-opensource.github.io/LMD/
 Encoding: UTF-8
 RoxygenNote: 7.2.1
 Suggests: 

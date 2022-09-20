@@ -4,9 +4,5 @@
 
 
 ### First Release
-- Added lmn and supporting functions
-
-### NEWS.md setup
-
-- added NEWS.md creation with newsmd
+- Added LMD and supporting functions
 
