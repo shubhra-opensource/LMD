@@ -2,7 +2,7 @@ Package: LMD
 Type: Package
 Date: 2022-09-10
 Title: A Self-Adaptive Approach for Demodulating Multi-Component Signal
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Shubhra", "Prakash", email = "shubhraprakash279@gmail.com", role = c("trl","aut","cre")))
 Maintainer: Shubhra Prakash <shubhraprakash279@gmail.com>
@@ -13,7 +13,7 @@ BugReports: https://github.com/shubhra-opensource/LMD/issues
 URL: https://github.com/shubhra-opensource/LMD,
     https://shubhra-opensource.github.io/LMD/
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Suggests: 
     knitr,
     rmarkdown,
