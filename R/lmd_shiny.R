@@ -8,7 +8,6 @@
 #' @import ggplot2
 #' @import patchwork
 #' @import shiny
-#' @import shinyjs
 #' @examples
 #' lmd_shiny()
 #' @export lmd_shiny
@@ -29,6 +28,7 @@ lmd_shiny <- function(){
                     accept = c("text/csv", "text/comma-separated-values,text/plain",
                                ".csv")),
           selectInput("column", "Select a column", choices = NULL),
+          selectInput("max_pf", "Select max_pf", choices = 1:8,selected=5),
           actionButton("submit", "Submit")
         ),
         mainPanel(
@@ -70,7 +70,11 @@ lmd_shiny <- function(){
         output$lmdplot <- renderPlot({
           # browser()
           req(input$column)
-          plot_lmd(lmd(dataset()[input$column][,1]))
+          lmd_obj=lmd(dataset()[input$column][,1],max_num_pf = input$max_pf)
+          validate(
+            need(length(lmd_obj$pf) > 0, "Error: No valid PFs found.")
+          )
+          plot_lmd(lmd_obj)
 
 
         })
