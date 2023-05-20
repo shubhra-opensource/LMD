@@ -8,8 +8,7 @@
 #' @import ggplot2
 #' @import patchwork
 #' @import shiny
-#' @examples
-#' lmd_shiny()
+#' @import utils
 #' @export lmd_shiny
 
 lmd_shiny <- function(){
@@ -45,7 +44,7 @@ lmd_shiny <- function(){
       # Load dataset
       dataset <- reactive({
         req(input$file)
-        read.csv(input$file$datapath)
+        utils::read.csv(input$file$datapath)
       })
 
       # Update column choices based on selected dataset

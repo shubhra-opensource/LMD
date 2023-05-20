@@ -9,9 +9,6 @@ lmd_shiny()
 \description{
 Shiny Dashboard for plotting Product Functions (PFs) and Residue
 }
-\examples{
-lmd_shiny()
-}
 \author{
 Shubhra Prakash, \email{shubhraprakash279@gmail.com}
 }
