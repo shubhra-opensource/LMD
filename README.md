@@ -1,4 +1,6 @@
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/LMD)
+![CRAN Vignette]([https://cranlogs.r-pkg.org/badges/grand-total/LMD](https://cran.r-project.org/web/packages/LMD/vignettes/Getting_Started_with_LMD.html))
+
 # LMD
 
 A Self-Adaptive Approach for Demodulating Multi-Component Signal
