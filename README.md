@@ -1,3 +1,4 @@
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/LMD)
 # LMD
 
 A Self-Adaptive Approach for Demodulating Multi-Component Signal
