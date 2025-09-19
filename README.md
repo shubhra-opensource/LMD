@@ -1,5 +1,5 @@
-![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/LMD)
-[CRAN Vignette]([https://cranlogs.r-pkg.org/badges/grand-total/LMD](https://cran.r-project.org/web/packages/LMD/vignettes/Getting_Started_with_LMD.html))
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/LMD)<br>
+CRAN Vignette [CRAN Vignette]([https://cranlogs.r-pkg.org/badges/grand-total/LMD](https://cran.r-project.org/web/packages/LMD/vignettes/Getting_Started_with_LMD.html))
 
 # LMD
 
