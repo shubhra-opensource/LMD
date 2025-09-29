@@ -1,51 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/404.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/articles/Getting_Started_with_LMD.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/extract_product_function.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/find_extrema.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/is_monotonous.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/lmd.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/lmd_shiny.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/local_mean_and_envelope.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/moving_average_smooth.html</loc>
-  </url>
-  <url>
-    <loc>https://shubhra-opensource.github.io/LMD/reference/plot_lmd.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://shubhra-opensource.github.io/LMD/404.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/LICENSE.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/articles/Getting_Started_with_LMD.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/articles/index.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/authors.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/index.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/news/index.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/extract_product_function.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/find_extrema.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/index.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/is_monotonous.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/lmd.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/lmd_shiny.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/local_mean_and_envelope.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/moving_average_smooth.html</loc></url>
+<url><loc>https://shubhra-opensource.github.io/LMD/reference/plot_lmd.html</loc></url>
 </urlset>
+
