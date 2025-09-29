@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with LMD"
+title: "Getting_Started_with_LMD"
 author: "Shubhra Prakash"
 date: "`r Sys.Date()`"
 output:

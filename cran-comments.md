@@ -2,5 +2,10 @@
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
-* This is a new release.
-* In this release we have added a shiny dashboard for easy usage
+Version 1.2.0 submission
+
+# - Fixed ggplot2 compatibility issues.
+- No significant changes to API.
+- Package built and checked on Windows, macOS, and Linux.
+
+Thank you for your consideration.
